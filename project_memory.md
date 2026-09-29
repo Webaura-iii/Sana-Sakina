@@ -1,0 +1,12 @@
+- Mirella Skin & Hair Care — Firebase-backed storefront + admin [2026-09-27]
+- Project: mirella-glow-6a3f1 (real config in storefront/js/firebase-config.js)
+- Paths: artifacts/storefront/, artifacts/admin/, rules at artifacts/firestore.rules + storage.rules + firebase.json
+- Collections: products (public read), orders (public create matching rules shape, admin RUD), settings/store + settings/reviews, admins/{uid}
+- Admin requires Auth user + admins/{uid}.active == true
+- Order create shape: orderNumber, customer{name,phone,address,city,state,pincode}, items, total, status:'new', paymentStatus:'pending', paymentMethod
+- Seed products/reviews from Admin panel when empty
+- WhatsApp number from settings/store (default placeholder 919876543210)
+- UPI-only checkout: settings/store.upiId + upiName; payment screenshot required → storage payment-proofs/; order.paymentProofUrl [2026-09-27]
+- FAQs from settings/faqs.items (admin FAQs panel only); storefront FAQ section empty until seeded [2026-09-27]
+- Shop homepage preview limited (6 desktop / 4 tablet / 4 mobile); full list on collection.html [2026-09-27]
+- Section order: Hero → Featured → Shop → About (centered, no image) → Reviews (marquee) → How to Order → FAQ [2026-09-27]
